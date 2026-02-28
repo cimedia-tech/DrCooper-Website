@@ -569,33 +569,36 @@
                         </div>
                     </div>
 
-<form id="contact-form" action="https://formspree.io/f/xeeldvql" method="POST" class="grid grid-cols-1 gap-6">
-                    <div>
-                        <label for="full-name" class="block text-sm font-semibold text-primary mb-2">Full Name</label>
-                        <input type="text" name="name" id="full-name" placeholder="First and Last Name" required
-                               class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all">
+<form id="contact-form" action="https://formspree.io/f/xeeldvql" method="POST" class="grid grid-cols-1 gap-y-6">
+                <div>
+                    <label for="full-name" class="block text-sm font-semibold leading-6 text-gray-900">Full Name</label>
+                    <div class="mt-2.5">
+                        <input type="text" name="name" id="full-name" autocomplete="name" placeholder="Your full name"
+                            class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-accent sm:text-sm sm:leading-6">
                     </div>
-
-                    <div>
-                        <label for="email-address" class="block text-sm font-semibold text-primary mb-2">Email Address</label>
-                        <input type="email" name="_replyto" id="email-address" placeholder="email@example.com" required
-                               class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all">
+                </div>
+                <div>
+                    <label for="email-address" class="block text-sm font-semibold leading-6 text-gray-900">Email</label>
+                    <div class="mt-2.5">
+                        <input type="email" name="_replyto" id="email-address" autocomplete="email" placeholder="your@email.com"
+                            class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-accent sm:text-sm sm:leading-6">
                     </div>
-
-                    <div>
-                        <label for="message" class="block text-sm font-semibold text-primary mb-2">Message</label>
-                        <textarea rows="4" name="message" id="message" placeholder="How can Dr. Cooper help you?" required
-                                  class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all"></textarea>
+                </div>
+                <div>
+                    <label for="message" class="block text-sm font-semibold leading-6 text-gray-900">Message</label>
+                    <div class="mt-2.5">
+                        <textarea rows="4" name="message" id="message" placeholder="How can I help you?"
+                            class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-accent sm:text-sm sm:leading-6"></textarea>
                     </div>
-
-                    <div>
-                        <p id="form-status" class="text-sm mb-2"></p>
-                        <button id="submit-btn" type="submit"
-                                class="w-full bg-primary text-white font-bold py-4 px-6 rounded-lg hover:bg-accent transition-colors duration-300 shadow-md">
-                            Send Message
-                        </button>
-                    </div>
-                </form>
+                </div>
+                <div>
+                    <p id="form-status" class="text-sm mb-2"></p>
+                    <button id="submit-btn" type="submit"
+                        class="w-full bg-primary text-white font-semibold py-3 px-6 rounded-lg hover:bg-accent transition-colors duration-300">
+                        Send Message
+                    </button>
+                </div>
+            </form>
                 </div>
             </div>
         </section>

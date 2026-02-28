@@ -593,7 +593,6 @@
                     </div>
                 </div>
                 <div>
-                    <p id="form-status" class="text-sm mb-2"></p>
                     <button id="submit-btn" type="submit"
                         class="w-full bg-accent text-white font-semibold py-3 px-6 rounded-lg hover:bg-accent/90 transition-colors duration-300">
                         Send Message
@@ -673,40 +672,6 @@
             }
         });
 
-                const contactForm = document.getElementById('contact-form');
-        const formStatus = document.getElementById('form-status');
-        const submitBtn = document.getElementById('submit-btn');
-
-        if (contactForm) {
-            contactForm.addEventListener('submit', async (e) => {
-                e.preventDefault();
-                formStatus.textContent = '';
-                formStatus.className = 'text-sm mt-1';
-                submitBtn.disabled = true;
-                submitBtn.textContent = 'Sending...';
-                try {
-                    const res = await fetch(contactForm.action, {
-                        method: 'POST',
-                        body: new FormData(contactForm),
-                        headers: { 'Accept': 'application/json' }
-                    });
-                    if (res.ok) {
-                        formStatus.textContent = 'Thanks! Your message has been sent.';
-                        formStatus.classList.add('text-green-400');
-                        contactForm.reset();
-                    } else {
-                        formStatus.textContent = 'Oops! There was a problem submitting your form.';
-                        formStatus.classList.add('text-red-400');
-                    }
-                } catch (err) {
-                    formStatus.textContent = 'Network error. Please try again.';
-                    formStatus.classList.add('text-red-400');
-                } finally {
-                    submitBtn.disabled = false;
-                    submitBtn.textContent = 'Send Message';
-                }
-            });
-        }
 
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {

@@ -569,7 +569,7 @@
                         </div>
                     </div>
 
-                    <form class="max-w-lg mx-auto space-y-4 text-left" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/success">
+                    <form class="max-w-lg mx-auto space-y-4 text-left" id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" netlify-honeypot="bot-field" action="/success">
                         <p class="hidden">
                             <label>Don't fill this out if you're human: <input name="bot-field" /></label>
                         </p>
@@ -602,7 +602,7 @@
                             <label for="message" class="block text-sm font-medium mb-2 text-gray-300">Message</label>
                             <textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-400 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all resize-none" placeholder="Tell me about your project..."></textarea>
                         </div>
-                        <button type="submit" class="w-full py-4 bg-accent text-white rounded-lg hover:bg-accent/90 transition-all duration-300 font-semibold text-lg tracking-wide no-print">
+                        <p id="form-status" class="text-sm mt-1"></p>                     <button id="submit-btn" type="submit" class="w-full py-4 bg-accent text-white rounded-lg hover:bg-accent/90 transition-all duration-300 font-semibold text-lg tracking-wide no-print">
                             Send Message
                         </button>
                     </form>
@@ -678,7 +678,7 @@
             }
         });
 
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        const contactForm = document.getElementById('contact-form');         const formStatus = document.getElementById('form-status');         const submitBtn = document.getElementById('submit-btn');          if (contactForm) {             contactForm.addEventListener('submit', async (e) => {                 e.preventDefault();                 formStatus.textContent = '';                 formStatus.className = 'text-sm mt-1';                 submitBtn.disabled = true;                 submitBtn.textContent = 'Sending...';                 try {                     const res = await fetch(contactForm.action, {                         method: 'POST',                         body: new FormData(contactForm),                         headers: { 'Accept': 'application/json' }                     });                     if (res.ok) {                         formStatus.textContent = 'Thanks! Your message has been sent.';                         formStatus.classList.add('text-green-400');                         contactForm.reset();                     } else {                         formStatus.textContent = 'Oops! There was a problem submitting your form.';                         formStatus.classList.add('text-red-400');                     }                 } catch (err) {                     formStatus.textContent = 'Network error. Please try again.';                     formStatus.classList.add('text-red-400');                 } finally {                     submitBtn.disabled = false;                     submitBtn.textContent = 'Send Message';                 }             });         }          document.querySelectorAll('a[href^="#"]').forEach(anchor => {.forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
@@ -695,3 +695,4 @@
     </script>
 </body>
 </html>
+

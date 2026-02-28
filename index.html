@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dr. Tony Lee Cooper, Sr. - Senior Project Success Coach at Livingstone College specializing in academic resilience, first-generation student success, and TRIO program development.">
+    <meta name="keywords" content="Tony Lee Cooper, academic coach, TRIO programs, first-generation students, Livingstone College, educational consultant">
+    <title>Dr. Tony Lee Cooper, Sr. | Educator & Researcher</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        primary: '#0f172a',
+                        secondary: '#475569',
+                        accent: '#86B0C6',
+                        muted: '#f8fafc',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        html { scroll-behavior: smooth; }
+        
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .stagger-1 { transition-delay: 0.1s; }
+        .stagger-2 { transition-delay: 0.2s; }
+        .stagger-3 { transition-delay: 0.3s; }
+        .stagger-4 { transition-delay: 0.4s; }
+        
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-blur {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        
+        .hero-bg {
+            background-image: linear-gradient(to bottom, rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        .section-line {
+            width: 60px;
+            height: 3px;
+            background: #86B0C6;
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            .reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+            html { scroll-behavior: auto; }
+        }
+    </style>
+</head>
+<body class="font-sans text-primary antialiased bg-white selection:bg-accent selection:text-white">
+
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary text-white px-4 py-2 rounded z-50">
+        Skip to main content
+    </a>
+
+    <nav class="fixed w-full z-50 transition-all duration-300 text-white" id="navbar" role="navigation" aria-label="Main navigation">
+        <div class="max-w-7xl mx-auto px-6 py-6">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-2xl font-serif font-bold tracking-tight hover:opacity-70 transition-opacity" aria-label="Dr. Tony Lee Cooper Home">
+                    TLC
+                </a>
+                
+                <div class="hidden md:flex space-x-8 text-sm font-medium tracking-wide">
+                    <a href="#about" class="hover:text-accent transition-colors">About</a>
+                    <a href="#experience" class="hover:text-accent transition-colors">Experience</a>
+                    <a href="#research" class="hover:text-accent transition-colors">Research</a>
+                    <a href="#publications" class="hover:text-accent transition-colors">Publications</a>
+                    <a href="#contact" class="hover:text-accent transition-colors">Contact</a>
+                </div>
+                
+                <a href="#contact" class="hidden md:inline-block px-6 py-3 bg-accent text-white rounded-full hover:bg-accent/90 transition-all duration-300 text-sm font-semibold tracking-wide no-print">
+                    Book Now
+                </a>
+                
+                <button class="md:hidden p-2" onclick="toggleMenu()" aria-label="Toggle menu" aria-expanded="false" id="menuButton">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t text-primary absolute w-full shadow-lg" role="menu">
+            <div class="px-6 py-4 space-y-3">
+                <a href="#about" class="block py-2 hover:text-accent" role="menuitem">About</a>
+                <a href="#experience" class="block py-2 hover:text-accent" role="menuitem">Experience</a>
+                <a href="#research" class="block py-2 hover:text-accent" role="menuitem">Research</a>
+                <a href="#publications" class="block py-2 hover:text-accent" role="menuitem">Publications</a>
+                <a href="#contact" class="block py-2 hover:text-accent" role="menuitem">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content">
+
+        <section class="relative min-h-screen flex items-center justify-center hero-bg text-white" aria-label="Introduction">
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white/10"></div>
+            <div class="relative z-10 max-w-5xl mx-auto px-6 text-center pt-20">
+                <div class="reveal stagger-1 mb-6">
+                    <p class="text-sm md:text-base font-medium tracking-[0.3em] uppercase text-accent mb-4">Empowering Growth • Championing Success</p>
+                </div>
+                <h1 class="reveal stagger-2 text-5xl md:text-7xl lg:text-8xl font-serif font-bold leading-[0.9] mb-8 tracking-tight">
+                    DR. TONY LEE<br>
+                    <span class="italic font-normal text-accent/90">COOPER, SR.</span>
+                </h1>
+                <div class="reveal stagger-3 max-w-2xl mx-auto mb-10">
+                    <p class="text-lg md:text-xl text-gray-200 leading-relaxed font-light">
+                        Senior Project Success Coach at Livingstone College specializing in academic resilience, 
+                        first-generation student success, and TRIO program development.
+                    </p>
+                </div>
+                <div class="reveal stagger-4 flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="#contact" class="px-10 py-4 bg-accent text-white rounded-full hover:bg-white hover:text-primary transition-all duration-300 text-sm font-semibold tracking-wide uppercase no-print">
+                        Work With Me
+                    </a>
+                    <a href="#research" class="px-10 py-4 border-2 border-white/30 text-white rounded-full hover:bg-white hover:text-primary transition-all duration-300 text-sm font-semibold tracking-wide uppercase backdrop-blur-sm">
+                        View Research
+                    </a>
+                </div>
+            </div>
+            
+            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce no-print" aria-hidden="true">
+                <svg class="w-6 h-6 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                </svg>
+            </div>
+        </section>
+
+        <section class="py-16 bg-white border-b" aria-label="Institutional affiliations">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-10">
+                    <div class="flex items-center justify-center gap-4 mb-2">
+                        <div class="h-px w-12 bg-gray-300"></div>
+                        <p class="text-xs font-bold tracking-[0.2em] uppercase text-secondary">Trusted By</p>
+                        <div class="h-px w-12 bg-gray-300"></div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center opacity-70">
+                    <div class="flex flex-col items-center gap-2">
+                        <div class="w-16 h-16 bg-primary/5 rounded-full flex items-center justify-center">
+                            <span class="font-serif font-bold text-primary text-lg">LC</span>
+                        </div>
+                        <span class="text-xs font-medium text-secondary">Livingstone College</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-2">
+                        <div class="w-16 h-16 bg-primary/5 rounded-full flex items-center justify-center">
+                            <span class="font-serif font-bold text-primary text-lg">TRIO</span>
+                        </div>
+                        <span class="text-xs font-medium text-secondary">TRIO Programs</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-2">
+                        <div class="w-16 h-16 bg-primary/5 rounded-full flex items-center justify-center">
+                            <span class="font-serif font-bold text-primary text-lg">NCCU</span>
+                        </div>
+                        <span class="text-xs font-medium text-secondary">NC Central Univ.</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-2">
+                        <div class="w-16 h-16 bg-primary/5 rounded-full flex items-center justify-center">
+                            <span class="font-serif font-bold text-primary text-lg">ABS</span>
+                        </div>
+                        <span class="text-xs font-medium text-secondary">Assoc. Black Sociologists</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-24 md:py-32 px-6 bg-muted" aria-label="About Dr. Cooper">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid md:grid-cols-12 gap-16 items-center">
+                    <div class="md:col-span-5 reveal">
+                        <div class="relative">
+                            <div class="aspect-[4/5] bg-gradient-to-br from-primary to-secondary rounded-2xl relative overflow-hidden shadow-2xl">
+                                <div class="absolute inset-0 flex items-center justify-center text-white/20">
+                                    <svg class="w-40 h-40" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="absolute -bottom-6 -right-6 w-48 h-48 bg-accent/10 rounded-full -z-10"></div>
+                            <div class="absolute -top-6 -left-6 w-32 h-32 bg-accent/10 rounded-full -z-10"></div>
+                        </div>
+                    </div>
+                    <div class="md:col-span-7 reveal">
+                        <div class="section-line mb-6"></div>
+                        <h2 class="text-4xl md:text-5xl font-serif font-bold mb-6 leading-tight">Academic Success Through<br><span class="italic text-secondary font-normal">Resilience & Support</span></h2>
+                        <p class="text-secondary leading-relaxed mb-6 text-lg">
+                            Dr. Tony Lee Cooper, Sr. is an accomplished educator and researcher based in Statesville, North Carolina. 
+                            With an Ed.D. focused on academic success factors among first-generation African-American students at 
+                            Historically Black Colleges, he brings deep expertise in student retention and resilience-based interventions.
+                        </p>
+                        <p class="text-secondary leading-relaxed mb-8">
+                            His dissertation research identified <strong>personal resilience as a statistically significant predictor of GPA (p = .012)</strong>, 
+                            supporting evidence-based approaches to improve student retention and academic outcomes.
+                        </p>
+                        <div class="grid grid-cols-2 gap-8 pt-8 border-t">
+                            <div>
+                                <h3 class="font-bold text-2xl mb-1 text-primary">Ed.D.</h3>
+                                <p class="text-sm text-secondary uppercase tracking-wide">Doctor of Education</p>
+                                <p class="text-xs text-secondary/70 mt-1">Higher Education Leadership</p>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-2xl mb-1 text-primary">7+</h3>
+                                <p class="text-sm text-secondary uppercase tracking-wide">Years Experience</p>
+                                <p class="text-xs text-secondary/70 mt-1">Special Education & Higher Ed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="py-24 md:py-32 px-6" aria-label="Professional experience">
+            <div class="max-w-7xl mx-auto">
+                <div class="reveal mb-16 md:mb-24 text-center max-w-3xl mx-auto">
+                    <div class="section-line mx-auto mb-6"></div>
+                    <h2 class="text-4xl md:text-5xl font-serif font-bold mb-4">Professional Experience</h2>
+                    <p class="text-secondary text-lg">Over seven years of experience in special education and academic coaching, with specialized expertise in TRIO programs and first-generation student support.</p>
+                </div>
+
+                <div class="space-y-8">
+                    <article class="reveal hover-lift bg-white border border-gray-100 rounded-2xl p-8 md:p-12 shadow-sm hover:shadow-xl transition-all">
+                        <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-6">
+                            <div class="mb-4 md:mb-0">
+                                <div class="inline-block px-3 py-1 bg-accent/10 text-accent text-xs font-bold tracking-wider uppercase rounded-full mb-3">Current Position</div>
+                                <h3 class="text-2xl font-bold mb-2 text-primary">Senior Project Success Coach</h3>
+                                <p class="text-accent font-semibold text-lg">Livingstone College, TRIO Student Support Services</p>
+                            </div>
+                            <time class="text-sm font-medium text-secondary bg-muted px-4 py-2 rounded-full">Present</time>
+                        </div>
+                        <div class="h-px w-full bg-gray-100 mb-6"></div>
+                        <ul class="space-y-4 text-secondary">
+                            <li class="flex items-start">
+                                <span class="mr-4 mt-1.5 w-2 h-2 bg-accent rounded-full flex-shrink-0" aria-hidden="true"></span>
+                                <span class="text-lg">Provide academic coaching and retention support for first-generation, low-income, and underrepresented college students</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-4 mt-1.5 w-2 h-2 bg-accent rounded-full flex-shrink-0" aria-hidden="true"></span>
+                                <span class="text-lg">Develop resilience-based programming aligned with federal TRIO grant objectives</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-4 mt-1.5 w-2 h-2 bg-accent rounded-full flex-shrink-0" aria-hidden="true"></span>
+                                <span class="text-lg">Implement data-driven interventions to improve student persistence and graduation rates</span>
+                            </li>
+                        </ul>
+                    </article>
+
+                    <article class="reveal hover-lift bg-white border border-gray-100 rounded-2xl p-8 md:p-12 shadow-sm hover:shadow-xl transition-all">
+                        <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-6">
+                            <div class="mb-4 md:mb-0">
+                                <h3 class="text-2xl font-bold mb-2 text-primary">Public School Educator, Special Education</h3>
+                                <p class="text-accent font-semibold text-lg">K-12 Public Schools</p>
+                            </div>
+                            <time class="text-sm font-medium text-secondary bg-muted px-4 py-2 rounded-full">7 Years</time>
+                        </div>
+                        <div class="h-px w-full bg-gray-100 mb-6"></div>
+                        <ul class="space-y-4 text-secondary">
+                            <li class="flex items-start">
+                                <span class="mr-4 mt-1.5 w-2 h-2 bg-accent rounded-full flex-shrink-0" aria-hidden="true"></span>
+                                <span class="text-lg">Delivered specialized instruction aligned with Individualized Education Programs (IEPs)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-4 mt-1.5 w-2 h-2 bg-accent rounded-full flex-shrink-0" aria-hidden="true"></span>
+                                <span class="text-lg">Implemented differentiated instructional strategies to promote equitable academic outcomes</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-4 mt-1.5 w-2 h-2 bg-accent rounded-full flex-shrink-0" aria-hidden="true"></span>
+                                <span class="text-lg">Collaborated with multidisciplinary teams to support diverse learner needs</span>
+                            </li>
+                        </ul>
+                    </article>
+
+                    <article class="reveal hover-lift bg-white border border-gray-100 rounded-2xl p-8 md:p-12 shadow-sm hover:shadow-xl transition-all">
+                        <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-6">
+                            <div class="mb-4 md:mb-0">
+                                <h3 class="text-2xl font-bold mb-2 text-primary">Founder & Executive Director</h3>
+                                <p class="text-accent font-semibold text-lg">Bridging the Gap Programs (VA & NC)</p>
+                            </div>
+                            <time class="text-sm font-medium text-secondary bg-muted px-4 py-2 rounded-full">1998–Present</time>
+                        </div>
+                        <div class="h-px w-full bg-gray-100 mb-6"></div>
+                        <ul class="space-y-4 text-secondary">
+                            <li class="flex items-start">
+                                <span class="mr-4 mt-1.5 w-2 h-2 bg-accent rounded-full flex-shrink-0" aria-hidden="true"></span>
+                                <span class="text-lg">Originally established as a Fatherhood Program (1998–2003), expanded to comprehensive community services</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-4 mt-1.5 w-2 h-2 bg-accent rounded-full flex-shrink-0" aria-hidden="true"></span>
+                                <span class="text-lg">Provide GED preparation, parenting education, computer literacy, and workforce development</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-4 mt-1.5 w-2 h-2 bg-accent rounded-full flex-shrink-0" aria-hidden="true"></span>
+                                <span class="text-lg">Developer of "A Father's Love" series promoting father-child engagement initiatives</span>
+                            </li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="research" class="py-24 md:py-32 px-6 bg-primary text-white relative overflow-hidden" aria-label="Research focus areas">
+            <div class="absolute inset-0 opacity-10" aria-hidden="true">
+                <div class="absolute top-0 left-0 w-96 h-96 bg-accent rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+                <div class="absolute bottom-0 right-0 w-96 h-96 bg-accent rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
+            </div>
+            
+            <div class="max-w-7xl mx-auto relative z-10">
+                <div class="reveal mb-16 md:mb-24 text-center max-w-3xl mx-auto">
+                    <div class="w-12 h-1 bg-accent mx-auto mb-6"></div>
+                    <h2 class="text-4xl md:text-5xl font-serif font-bold mb-4">Research Focus</h2>
+                    <p class="text-gray-300 text-lg">Investigating the factors that drive academic success among underrepresented student populations.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <article class="reveal hover-lift bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-2xl hover:bg-white/10 transition-all">
+                        <div class="w-14 h-14 bg-accent/20 rounded-xl flex items-center justify-center mb-6" aria-hidden="true">
+                            <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-xl mb-3">First-Generation Student Success</h3>
+                        <p class="text-gray-300 leading-relaxed">Frameworks for supporting students navigating higher education without family precedent</p>
+                    </article>
+
+                    <article class="reveal hover-lift bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-2xl hover:bg-white/10 transition-all">
+                        <div class="w-14 h-14 bg-accent/20 rounded-xl flex items-center justify-center mb-6" aria-hidden="true">
+                            <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-xl mb-3">Academic Resilience</h3>
+                        <p class="text-gray-300 leading-relaxed">Psychological factors and interventions that promote persistence through academic challenges</p>
+                    </article>
+
+                    <article class="reveal hover-lift bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-2xl hover:bg-white/10 transition-all">
+                        <div class="w-14 h-14 bg-accent/20 rounded-xl flex items-center justify-center mb-6" aria-hidden="true">
+                            <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0121 18.382V7.618a1 1 0 01-.806-.984A1 1 0 0021 7.618V7.618"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-xl mb-3">Institutional Navigation</h3>
+                        <p class="text-gray-300 leading-relaxed">Strategies to help students effectively navigate complex academic and administrative systems</p>
+                    </article>
+
+                    <article class="reveal hover-lift bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-2xl hover:bg-white/10 transition-all">
+                        <div class="w-14 h-14 bg-accent/20 rounded-xl flex items-center justify-center mb-6" aria-hidden="true">
+                            <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-xl mb-3">TRIO Program Development</h3>
+                        <p class="text-gray-300 leading-relaxed">Evaluation and enhancement of federal TRIO support services for disadvantaged students</p>
+                    </article>
+
+                    <article class="reveal hover-lift bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-2xl hover:bg-white/10 transition-all">
+                        <div class="w-14 h-14 bg-accent/20 rounded-xl flex items-center justify-center mb-6" aria-hidden="true">
+                            <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-xl mb-3">Fatherhood Initiatives</h3>
+                        <p class="text-gray-300 leading-relaxed">Family systems research focused on paternal engagement and child development outcomes</p>
+                    </article>
+
+                    <article class="reveal hover-lift bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-2xl hover:bg-white/10 transition-all">
+                        <div class="w-14 h-14 bg-accent/20 rounded-xl flex items-center justify-center mb-6" aria-hidden="true">
+                            <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-xl mb-3">HBCU Student Success</h3>
+                        <p class="text-gray-300 leading-relaxed">Unique factors affecting retention and achievement at Historically Black Colleges and Universities</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="publications" class="py-24 md:py-32 px-6 bg-muted" aria-label="Publications and presentations">
+            <div class="max-w-7xl mx-auto">
+                <div class="reveal mb-16 md:mb-24 text-center max-w-3xl mx-auto">
+                    <div class="section-line mx-auto mb-6"></div>
+                    <h2 class="text-4xl md:text-5xl font-serif font-bold mb-4">Publications & Presentations</h2>
+                    <p class="text-secondary text-lg">Recent scholarship and speaking engagements on student success and educational equity.</p>
+                </div>
+
+                <div class="space-y-6 max-w-4xl mx-auto">
+                    <article class="reveal hover-lift bg-white p-8 md:p-10 rounded-2xl shadow-sm border-l-4 border-accent">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                            <span class="inline-block px-3 py-1 bg-accent/10 text-accent text-xs font-bold tracking-wider uppercase rounded-full mb-2 md:mb-0">Journal Article</span>
+                            <time class="text-sm font-medium text-secondary">2024</time>
+                        </div>
+                        <h3 class="text-xl md:text-2xl font-bold mb-3 leading-snug">Empowering first-generation college students: Tailoring TRIO student support services to improve overall outcomes</h3>
+                        <p class="text-secondary mb-2">The Association of Black Sociologists, Winter Issue</p>
+                        <p class="text-sm font-medium text-primary">Cooper, T. L.</p>
+                    </article>
+
+                    <article class="reveal hover-lift bg-white p-8 md:p-10 rounded-2xl shadow-sm">
+                        <div class="flex items-start gap-6">
+                            <div class="hidden md:flex w-20 h-20 bg-primary text-white rounded-2xl flex-col items-center justify-center flex-shrink-0" aria-hidden="true">
+                                <span class="text-xs uppercase tracking-wider">Apr</span>
+                                <span class="text-2xl font-bold">10</span>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <span class="inline-block px-3 py-1 bg-primary/5 text-primary text-xs font-bold tracking-wider uppercase rounded-full">Conference</span>
+                                    <time class="text-sm text-secondary">2025</time>
+                                </div>
+                                <h3 class="text-xl font-bold mb-2">Resilience and student success frameworks for first-generation college students</h3>
+                                <p class="text-secondary">TRIO Student Access & Success Conference</p>
+                                <p class="text-sm text-secondary/70 mt-1">North Carolina Central University, Durham, NC</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="reveal hover-lift bg-white p-8 md:p-10 rounded-2xl shadow-sm">
+                        <div class="flex items-start gap-6">
+                            <div class="hidden md:flex w-20 h-20 bg-primary text-white rounded-2xl flex-col items-center justify-center flex-shrink-0" aria-hidden="true">
+                                <span class="text-xs uppercase tracking-wider">Feb</span>
+                                <span class="text-2xl font-bold">15</span>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <span class="inline-block px-3 py-1 bg-primary/5 text-primary text-xs font-bold tracking-wider uppercase rounded-full">Workshop</span>
+                                    <time class="text-sm text-secondary">2025</time>
+                                </div>
+                                <h3 class="text-xl font-bold mb-2">Unlock Your Potential</h3>
+                                <p class="text-secondary">Educational Opportunity Center Workshop</p>
+                                <p class="text-sm text-secondary/70 mt-1">Central Piedmont Community College, Charlotte, NC</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="reveal hover-lift bg-white p-8 md:p-10 rounded-2xl shadow-sm">
+                        <div class="flex items-start gap-6">
+                            <div class="hidden md:flex w-20 h-20 bg-primary text-white rounded-2xl flex-col items-center justify-center flex-shrink-0" aria-hidden="true">
+                                <span class="text-xs uppercase tracking-wider">Fall</span>
+                                <span class="text-2xl font-bold">24</span>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <span class="inline-block px-3 py-1 bg-primary/5 text-primary text-xs font-bold tracking-wider uppercase rounded-full">Conference</span>
+                                    <time class="text-sm text-secondary">2024</time>
+                                </div>
+                                <h3 class="text-xl font-bold mb-2">Student access and resilience strategies</h3>
+                                <p class="text-secondary">Student Access Conference</p>
+                                <p class="text-sm text-secondary/70 mt-1">North Carolina Central University, Durham, NC</p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 md:py-32 px-6" aria-label="Faith and community leadership">
+            <div class="max-w-7xl mx-auto">
+                <div class="reveal mb-16 text-center">
+                    <div class="section-line mx-auto mb-6"></div>
+                    <h2 class="text-4xl md:text-5xl font-serif font-bold mb-4">Faith & Community Leadership</h2>
+                    <p class="text-secondary max-w-2xl mx-auto">Committed to spiritual guidance and community development for over four decades.</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <article class="reveal text-center p-8 border border-gray-100 rounded-2xl hover:border-accent/30 hover:shadow-lg transition-all">
+                        <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6" aria-hidden="true">
+                            <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-xl mb-2">Bishop</h3>
+                        <p class="text-secondary">Christ Cathedral of Deliverance</p>
+                    </article>
+
+                    <article class="reveal text-center p-8 border border-gray-100 rounded-2xl hover:border-accent/30 hover:shadow-lg transition-all">
+                        <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6" aria-hidden="true">
+                            <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-xl mb-2">Pastor of Christian Education</h3>
+                        <p class="text-secondary">Overseeing educational ministries and spiritual development</p>
+                    </article>
+
+                    <article class="reveal text-center p-8 border border-gray-100 rounded-2xl hover:border-accent/30 hover:shadow-lg transition-all">
+                        <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6" aria-hidden="true">
+                            <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-xl mb-2">Executive Board Member</h3>
+                        <p class="text-secondary">Apostolic Faith Churches of Deliverance</p>
+                    </article>
+                </div>
+                
+                <div class="reveal mt-12 text-center pt-12 border-t border-gray-100">
+                    <p class="text-secondary text-lg">45-Year Member, Deliverance Tabernacle and Christ Cathedral of Deliverance</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-24 md:py-32 px-6 bg-primary text-white relative overflow-hidden" aria-label="Contact information">
+            <div class="absolute inset-0 opacity-20" aria-hidden="true">
+                <div class="absolute top-0 right-0 w-96 h-96 bg-accent rounded-full blur-3xl translate-x-1/2 -translate-y-1/2"></div>
+            </div>
+            
+            <div class="max-w-4xl mx-auto text-center relative z-10">
+                <div class="reveal mb-12">
+                    <div class="w-12 h-1 bg-accent mx-auto mb-6"></div>
+                    <h2 class="text-4xl md:text-5xl font-serif font-bold mb-4">Let's Work Together</h2>
+                    <p class="text-gray-300 text-lg">Interested in collaboration, speaking engagements, or consulting?</p>
+                </div>
+
+                <div class="reveal bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 md:p-12">
+                    <div class="flex flex-col md:flex-row justify-center items-center gap-8 mb-10">
+                        <a href="tel:704-380-1308" class="flex items-center gap-4 text-lg hover:text-accent transition-colors group no-print">
+                            <div class="w-14 h-14 bg-white/10 rounded-full flex items-center justify-center group-hover:bg-accent group-hover:scale-110 transition-all" aria-hidden="true">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                                </svg>
+                            </div>
+                            <span class="text-2xl font-semibold">(704) 380-1308</span>
+                        </a>
+                        <div class="hidden md:block w-px h-12 bg-white/20" aria-hidden="true"></div>
+                        <div class="flex items-center gap-4 text-lg">
+                            <div class="w-14 h-14 bg-white/10 rounded-full flex items-center justify-center" aria-hidden="true">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                </svg>
+                            </div>
+                            <span class="text-xl">Statesville, North Carolina</span>
+                        </div>
+                    </div>
+
+                    <form class="max-w-lg mx-auto space-y-4 text-left" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/success">
+                        <p class="hidden">
+                            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                        </p>
+                        
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <label for="firstName" class="block text-sm font-medium mb-2 text-gray-300">First Name</label>
+                                <input type="text" id="firstName" name="firstName" required class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-400 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all" placeholder="John">
+                            </div>
+                            <div>
+                                <label for="lastName" class="block text-sm font-medium mb-2 text-gray-300">Last Name</label>
+                                <input type="text" id="lastName" name="lastName" required class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-400 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all" placeholder="Doe">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium mb-2 text-gray-300">Email</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-400 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all" placeholder="john@example.com">
+                        </div>
+                        <div>
+                            <label for="interest" class="block text-sm font-medium mb-2 text-gray-300">Interest</label>
+                            <select id="interest" name="interest" required class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all">
+                                <option value="" class="text-primary">Select an option</option>
+                                <option value="speaking" class="text-primary">Speaking Engagement</option>
+                                <option value="consulting" class="text-primary">Consulting</option>
+                                <option value="research" class="text-primary">Research Collaboration</option>
+                                <option value="other" class="text-primary">Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium mb-2 text-gray-300">Message</label>
+                            <textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-400 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all resize-none" placeholder="Tell me about your project..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-4 bg-accent text-white rounded-lg hover:bg-accent/90 transition-all duration-300 font-semibold text-lg tracking-wide no-print">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="py-12 px-6 bg-primary border-t border-white/10 text-white" role="contentinfo">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-center md:text-left">
+                <p class="text-2xl font-serif font-bold mb-1">Dr. Tony Lee Cooper, Sr.</p>
+                <p class="text-gray-400 text-sm">Educator • Researcher • Leader</p>
+            </div>
+            <div class="flex gap-8 text-sm">
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-accent transition-colors">LinkedIn</a>
+                <a href="https://researchgate.net" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-accent transition-colors">ResearchGate</a>
+                <a href="mailto:contact@tonyleecooper.com" class="text-gray-400 hover:text-accent transition-colors">Email</a>
+            </div>
+            <p class="text-gray-500 text-sm">&copy; 2025 All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+        const navbar = document.getElementById('navbar');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 50) {
+                navbar.classList.add('bg-primary/95', 'nav-blur', 'shadow-lg');
+            } else {
+                navbar.classList.remove('bg-primary/95', 'nav-blur', 'shadow-lg');
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const button = document.getElementById('menuButton');
+            const isHidden = menu.classList.contains('hidden');
+            
+            menu.classList.toggle('hidden');
+            button.setAttribute('aria-expanded', !isHidden);
+        }
+
+        document.addEventListener('click', (e) => {
+            const menu = document.getElementById('mobileMenu');
+            const button = document.getElementById('menuButton');
+            
+            if (!menu.contains(e.target) && !button.contains(e.target) && !menu.classList.contains('hidden')) {
+                menu.classList.add('hidden');
+                button.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    document.getElementById('mobileMenu').classList.add('hidden');
+                    document.getElementById('menuButton').setAttribute('aria-expanded', 'false');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

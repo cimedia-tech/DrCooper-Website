@@ -637,6 +637,7 @@
         }, observerOptions);
 
         document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+                document.querySelectorAll('.reveal').forEach((el) => { if (el.getBoundingClientRect().top < window.innerHeight) { el.classList.add('active'); } });
 
         const navbar = document.getElementById('navbar');
         let lastScroll = 0;
@@ -689,4 +690,5 @@
     </script>
 </body>
 </html>
+
 
